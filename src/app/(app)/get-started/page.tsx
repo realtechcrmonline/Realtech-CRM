@@ -7,10 +7,19 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { generateSalesScript } from '@/ai/flows/generate-sales-script';
+import { suggestClientNurturingActions } from '@/ai/flows/suggest-client-nurturing-actions';
 
 interface IFormInput {
   file: FileList;
 }
+
+// Mock lead data that would be parsed from the uploaded file
+const mockLeadsFromFile = [
+  { name: 'Michael Scott', interest: 'high', mood: 'Positive' },
+  { name: 'Dwight Schrute', interest: 'medium', mood: 'Neutral' },
+  { name: 'Pam Beesly', interest: 'low', mood: 'Negative' },
+];
 
 export default function GetStartedPage() {
   const { register, handleSubmit, watch } = useForm<IFormInput>();
@@ -25,8 +34,27 @@ export default function GetStartedPage() {
     
     try {
       // Simulate reading and processing the file
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
+      // Trigger AI flows for each lead
+      for (const lead of mockLeadsFromFile) {
+        await generateSalesScript({
+          leadName: lead.name,
+          leadInterest: lead.interest,
+          initialMood: lead.mood,
+          productName: "Realtech AI",
+          productFeatures: "Automated lead nurturing, sentiment analysis, and dynamic script generation."
+        });
+
+        await suggestClientNurturingActions({
+          leadDetails: `Name: ${lead.name}, Interest: ${lead.interest}`,
+          marketConditions: "Competitive",
+          agentPreferences: "Friendly and professional tone."
+        });
+      }
+      
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
       setIsComplete(true);
       toast({
         title: 'Processing Complete',
