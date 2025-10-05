@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Loader2 } from 'lucide-react';
-import { generateSalesScript } from '@/ai/flows/generate-sales-script';
 import { useToast } from '@/hooks/use-toast';
 
 export default function TranscriptionsPage() {
@@ -17,14 +16,9 @@ export default function TranscriptionsPage() {
     setIsLoading(true);
     setScript('');
     try {
-      const result = await generateSalesScript({
-        leadName: 'Potential Client',
-        leadInterest: 'high',
-        initialMood: 'Neutral',
-        productName: 'Realtech',
-        productFeatures: 'AI-powered lead nurturing, automated follow-ups, sentiment analysis',
-      });
-      setScript(result.script);
+      // In a real application, this would call an AI flow.
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setScript(`AI Agent: "Hello, is this Potential Client? I'm calling from Realtech. I noticed you showed some interest in our AI-powered lead nurturing tools. I know you're busy, so I'll be brief. Our platform helps agents automate follow-ups and analyze sentiment to close more deals. Would you be open to receiving a short email with more details?"`);
     } catch (error) {
       console.error('Failed to generate script:', error);
       toast({

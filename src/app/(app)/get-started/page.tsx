@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-import { generateSalesScript } from '@/ai/flows/generate-sales-script';
 
 interface IFormInput {
   file: FileList;
@@ -25,26 +24,8 @@ export default function GetStartedPage() {
     setIsComplete(false);
     
     try {
-      // Simulate reading a CSV and processing leads
-      // In a real app, you would parse the file content.
-      const fakeLeads = [
-        { name: 'John Doe', interest: 'high', mood: 'Positive' },
-        { name: 'Jane Smith', interest: 'medium', mood: 'Neutral' },
-        { name: 'Bob Johnson', interest: 'low', mood: 'Negative' },
-      ];
-      
-      for (const lead of fakeLeads) {
-        // Simulate AI processing for each lead
-        await generateSalesScript({
-          leadName: lead.name,
-          leadInterest: lead.interest,
-          initialMood: lead.mood,
-          productName: "Realtech",
-          productFeatures: "AI-powered lead nurturing, automated follow-ups, sentiment analysis"
-        });
-        // Add a small delay between "calls"
-        await new Promise(resolve => setTimeout(resolve, 1000));
-      }
+      // Simulate reading and processing the file
+      await new Promise(resolve => setTimeout(resolve, 2000));
       
       setIsComplete(true);
       toast({
@@ -53,7 +34,7 @@ export default function GetStartedPage() {
       });
 
     } catch (error) {
-       console.error("AI processing failed:", error);
+       console.error("File processing failed:", error);
        toast({
         variant: "destructive",
         title: 'Processing Failed',
@@ -75,7 +56,7 @@ export default function GetStartedPage() {
         <Card>
           <CardHeader>
             <CardTitle>Upload Your Leads</CardTitle>
-            <CardDescription>Select a file from your computer (Excel, CSV).</CardDescription>
+            <CardDescription>Select a file from your computer (Excel, Pages, or Google Sheets).</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -89,7 +70,7 @@ export default function GetStartedPage() {
                     <p className="mb-2 text-sm text-muted-foreground">
                       <span className="font-semibold">Click to upload</span> or drag and drop
                     </p>
-                    <p className="text-xs text-muted-foreground">XLS, XLSX, or CSV</p>
+                    <p className="text-xs text-muted-foreground">XLS, XLSX, CSV, or from Google Sheets/Pages</p>
                   </div>
                   <Input id="dropzone-file" type="file" className="hidden" {...register('file', { required: true })} accept=".xls,.xlsx,.csv" />
                 </label>
