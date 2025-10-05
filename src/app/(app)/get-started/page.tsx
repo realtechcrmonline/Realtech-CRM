@@ -14,11 +14,11 @@ interface IFormInput {
   file: FileList;
 }
 
-// Mock lead data that would be parsed from the uploaded file
-const mockLeadsFromFile = [
-  { name: 'Michael Scott', interest: 'high', mood: 'Positive' },
-  { name: 'Dwight Schrute', interest: 'medium', mood: 'Neutral' },
-  { name: 'Pam Beesly', interest: 'low', mood: 'Negative' },
+// This represents the kind of data that would be parsed from an uploaded lead sheet.
+const parsedLeadsFromFile = [
+  { name: 'Michael Scott', interest: 'high', mood: 'Positive', profession: 'Regional Manager', email: 'michael.s@dundermifflin.com' },
+  { name: 'Dwight Schrute', interest: 'medium', mood: 'Neutral', profession: 'Beet Farmer', email: 'dwight.k.s@dundermifflin.com' },
+  { name: 'Pam Beesly', interest: 'low', mood: 'Negative', profession: 'Artist', email: 'pam.b@artschool.com' },
 ];
 
 export default function GetStartedPage() {
@@ -33,32 +33,44 @@ export default function GetStartedPage() {
     setIsComplete(false);
     
     try {
-      // Simulate reading and processing the file
+      // In a real application, you would parse the uploaded file here.
+      // For this demonstration, we'll simulate processing the file and using the parsed data.
+      console.log(`Processing file: ${data.file[0].name}`);
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Trigger AI flows for each lead
-      for (const lead of mockLeadsFromFile) {
-        await generateSalesScript({
+      // The AI agent processes each lead from the file.
+      for (const lead of parsedLeadsFromFile) {
+        console.log(`Processing lead: ${lead.name}`);
+        
+        // The AI generates a dynamic sales script for the call.
+        const scriptResult = await generateSalesScript({
           leadName: lead.name,
           leadInterest: lead.interest,
           initialMood: lead.mood,
           productName: "Realtech AI",
           productFeatures: "Automated lead nurturing, sentiment analysis, and dynamic script generation."
         });
+        console.log(`Generated script for ${lead.name}:`, scriptResult.script);
 
-        await suggestClientNurturingActions({
-          leadDetails: `Name: ${lead.name}, Interest: ${lead.interest}`,
-          marketConditions: "Competitive",
-          agentPreferences: "Friendly and professional tone."
+
+        // The AI suggests a nurturing action after the call.
+        const nurturingAction = await suggestClientNurturingActions({
+          leadDetails: `Name: ${lead.name}, Interest: ${lead.interest}, Email: ${lead.email}, Profession: ${lead.profession}`,
+          marketConditions: "Competitive market with rising interest rates.",
+          agentPreferences: "Friendly and professional tone, follow-up twice a week."
         });
+        console.log(`Nurturing suggestion for ${lead.name}:`, nurturingAction);
+        
+        // Here you would add logic to save the script, recording, and CRM entry.
       }
       
+      // Simulate the final processing steps.
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       setIsComplete(true);
       toast({
         title: 'Processing Complete',
-        description: `Your file "${data.file[0].name}" has been processed. The AI agents have completed their outreach.`,
+        description: `Your file "${data.file[0].name}" has been processed. The AI agents have completed their tasks.`,
       });
 
     } catch (error) {
@@ -66,7 +78,7 @@ export default function GetStartedPage() {
        toast({
         variant: "destructive",
         title: 'Processing Failed',
-        description: `There was an error processing your file.`,
+        description: `There was an error processing your file. Please check the console for details.`,
       });
     } finally {
         setIsProcessing(false);
@@ -84,7 +96,7 @@ export default function GetStartedPage() {
         <Card>
           <CardHeader>
             <CardTitle>Upload Your Leads</CardTitle>
-            <CardDescription>Select a file from your computer (Excel, Pages, or Google Sheets).</CardDescription>
+            <CardDescription>Select a file from your computer (e.g., Excel, CSV).</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -100,7 +112,7 @@ export default function GetStartedPage() {
                     </p>
                     <p className="text-xs text-muted-foreground">XLS, XLSX, CSV, or from Google Sheets/Pages</p>
                   </div>
-                  <Input id="dropzone-file" type="file" className="hidden" {...register('file', { required: true })} accept=".xls,.xlsx,.csv" />
+                  <Input id="dropzone-file" type="file" className="hidden" {...register('file', { required: true })} accept=".xls,.xlsx,.csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
                 </label>
               </div>
               
@@ -134,7 +146,8 @@ export default function GetStartedPage() {
             {isProcessing ? (
               <div className="text-center text-muted-foreground">
                 <Loader2 className="mx-auto h-12 w-12 animate-spin text-primary" />
-                <p className="mt-4">Analyzing data and preparing for outreach...</p>
+                <p className="mt-4">AI agent is processing your leads...</p>
+                <p className="text-sm">Calling leads, generating scripts, and analyzing sentiment.</p>
               </div>
             ) : isComplete ? (
                <div className="text-center text-green-600">
