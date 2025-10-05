@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A modern home exterior at dusk",
+      "imageUrl": "https://images.unsplash.com/photo-1670589953882-b94c9cb380f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBob3VzZXxlbnwwfHx8fDE3NTk2NDg0MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern house"
+    },
+    {
+      "id": "feature-1",
+      "description": "A person using a laptop with charts on screen",
+      "imageUrl": "https://images.unsplash.com/photo-1612178991541-b48cc8e92a4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYXB0b3AlMjBjaGFydHN8ZW58MHx8fHwxNzU5Njc5NTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "laptop charts"
+    },
+    {
+      "id": "feature-2",
+      "description": "A real estate agent shaking hands with a client",
+      "imageUrl": "https://images.unsplash.com/photo-1665072204431-b3ba11bd6d06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxoYW5kc2hha2UlMjBkZWFsfGVufDB8fHx8MTc1OTU1NzAyOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "handshake deal"
+    },
+    {
+      "id": "feature-3",
+      "description": "A family happily entering their new home",
+      "imageUrl": "https://images.unsplash.com/photo-1624272864537-8ecc72b67958?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxoYXBweSUyMGZhbWlseXxlbnwwfHx8fDE3NTk2NDU0NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy family"
+    }
+  ]
 }
