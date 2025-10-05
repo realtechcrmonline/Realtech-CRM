@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Users, Bot, Settings, Search } from 'lucide-react';
+import { Home, Users, Bot, Settings, Search, UploadCloud, BookUser, FileText, Mic } from 'lucide-react';
 import {
   SidebarProvider,
   Sidebar,
@@ -33,7 +33,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { href: '/dashboard', label: 'Dashboard', icon: Home },
+    { href: '/get-started', label: 'Get Started', icon: UploadCloud },
     { href: '/leads', label: 'Lead Management', icon: Users },
+    { href: '/crm', label: 'CRM', icon: BookUser },
+    { href: '/transcriptions', label: 'Transcriptions', icon: FileText },
+    { href: '/recordings', label: 'Recordings', icon: Mic },
     { href: '/tasks', label: 'Task Automation', icon: Bot },
     { href: '/settings', label: 'Settings', icon: Settings },
   ];
