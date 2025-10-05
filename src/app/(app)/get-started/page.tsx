@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { generateSalesScript } from '@/ai/flows/generate-sales-script';
 
 interface IFormInput {
   file: FileList;
@@ -23,16 +24,44 @@ export default function GetStartedPage() {
     setIsProcessing(true);
     setIsComplete(false);
     
-    // Simulate AI processing
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    
-    setIsProcessing(false);
-    setIsComplete(true);
-    
-    toast({
-      title: 'Processing Complete',
-      description: `Your file "${data.file[0].name}" has been processed. The AI agent will now begin outreach.`,
-    });
+    try {
+      // Simulate reading a CSV and processing leads
+      // In a real app, you would parse the file content.
+      const fakeLeads = [
+        { name: 'John Doe', interest: 'high', mood: 'Positive' },
+        { name: 'Jane Smith', interest: 'medium', mood: 'Neutral' },
+        { name: 'Bob Johnson', interest: 'low', mood: 'Negative' },
+      ];
+      
+      for (const lead of fakeLeads) {
+        // Simulate AI processing for each lead
+        await generateSalesScript({
+          leadName: lead.name,
+          leadInterest: lead.interest,
+          initialMood: lead.mood,
+          productName: "Realtech",
+          productFeatures: "AI-powered lead nurturing, automated follow-ups, sentiment analysis"
+        });
+        // Add a small delay between "calls"
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+      
+      setIsComplete(true);
+      toast({
+        title: 'Processing Complete',
+        description: `Your file "${data.file[0].name}" has been processed. The AI agents have completed their outreach.`,
+      });
+
+    } catch (error) {
+       console.error("AI processing failed:", error);
+       toast({
+        variant: "destructive",
+        title: 'Processing Failed',
+        description: `There was an error processing your file.`,
+      });
+    } finally {
+        setIsProcessing(false);
+    }
   };
 
   return (

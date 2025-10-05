@@ -4,3 +4,4 @@ config();
 import '@/ai/flows/automate-lead-communication.ts';
 import '@/ai/flows/automate-repetitive-tasks.ts';
 import '@/ai/flows/suggest-client-nurturing-actions.ts';
+import '@/ai/flows/generate-sales-script.ts';
