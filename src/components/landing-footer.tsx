@@ -7,13 +7,15 @@ export function LandingFooter() {
       <div className="container mx-auto py-12 px-4 md:px-6">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Logo className="h-6 w-6 text-primary" />
-            <span className="font-headline text-lg font-bold">
-              Realtech
-               <sup className="text-xs font-light ml-1">
+            <Logo className="h-8 w-8 text-primary" />
+            <div>
+              <div className="font-headline text-lg font-bold leading-tight">
+                Realtech
+              </div>
+              <div className="text-xs text-muted-foreground -mt-1">
                 Powered by Howdy Analytics
-              </sup>
-            </span>
+              </div>
+            </div>
           </Link>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Realtech. All rights reserved.

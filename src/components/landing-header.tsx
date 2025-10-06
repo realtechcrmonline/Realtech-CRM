@@ -7,13 +7,15 @@ export function LandingHeader() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Logo className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg font-bold">
-            Realtech
-            <sup className="text-xs font-light ml-1">
+          <Logo className="h-8 w-8 text-primary" />
+          <div>
+            <div className="font-headline text-lg font-bold leading-tight">
+              Realtech
+            </div>
+            <div className="text-xs text-muted-foreground -mt-1">
               Powered by Howdy Analytics
-            </sup>
-          </span>
+            </div>
+          </div>
         </Link>
         <nav className="flex items-center gap-4">
           <Button asChild>
