@@ -21,10 +21,10 @@ export function LandingFooter() {
             © {new Date().getFullYear()} Realtech. All rights reserved.
           </p>
           <nav className="flex gap-4">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground" prefetch={false}>
+            <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground" prefetch={false}>
               Terms
             </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground" prefetch={false}>
+            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground" prefetch={false}>
               Privacy
             </Link>
           </nav>
