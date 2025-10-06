@@ -9,7 +9,7 @@ export function LandingHeader() {
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <Logo className="h-6 w-6 text-primary" />
           <span className="font-headline text-lg font-bold">
-            Howdy Analytics
+            Realtech
           </span>
         </Link>
         <nav className="flex items-center gap-4">
