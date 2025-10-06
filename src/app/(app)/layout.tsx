@@ -78,10 +78,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <div className="flex items-center gap-3 p-2 rounded-md">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src="https://picsum.photos/seed/user-avatar/40/40" alt="User" />
-                  <AvatarFallback>JD</AvatarFallback>
+                  <AvatarFallback>DS</AvatarFallback>
                 </Avatar>
                 <div className="overflow-hidden group-data-[collapsible=icon]:hidden">
-                  <p className="text-sm font-medium text-sidebar-foreground truncate">Jane Doe</p>
+                  <p className="text-sm font-medium text-sidebar-foreground truncate">Deepak Sethi</p>
                 </div>
               </div>
           </SidebarFooter>
@@ -104,7 +104,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 <Button variant="outline" size="icon" className="overflow-hidden rounded-full">
                   <Avatar className="h-9 w-9">
                     <AvatarImage src="https://picsum.photos/seed/user-avatar/40/40" alt="User" />
-                    <AvatarFallback>JD</AvatarFallback>
+                    <AvatarFallback>DS</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>

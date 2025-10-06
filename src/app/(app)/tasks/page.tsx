@@ -43,7 +43,7 @@ export default function TasksPage() {
     try {
       const aiResult = await automateRepetitiveTasks({
         taskDescription: data.taskDescription,
-        userDetails: "Real Estate Agent Jane Doe",
+        userDetails: "Real Estate Agent Deepak Sethi",
         leadDetails: "General tasks, not specific to one lead.",
       });
       setResult(aiResult);

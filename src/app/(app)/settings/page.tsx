@@ -41,7 +41,7 @@ export default function SettingsPage() {
   const form = useForm<SettingsFormValues>({
     resolver: zodResolver(settingsSchema),
     defaultValues: {
-      agentName: "Jane Doe",
+      agentName: "Deepak Sethi",
       communicationFrequency: 3,
       communicationTone: "Friendly",
       automatedReminders: true,

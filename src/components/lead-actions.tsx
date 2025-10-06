@@ -73,7 +73,7 @@ export function LeadActions({ lead }: LeadActionProps) {
       const result = await automateLeadCommunication({
         leadDetails: `Name: ${lead.name}, Email: ${lead.email}, Status: ${lead.status}, Engagement: ${lead.engagement}, Last Contact: ${lead.lastContact}`,
         communicationPreferences: "Friendly tone, 2-3 times per week, via email. Focus on new listings in their preferred area.",
-        realEstateAgentName: "Jane Doe",
+        realEstateAgentName: "Deepak Sethi",
       });
       setCommPlanResult(result);
     } catch (e) {
@@ -143,6 +143,7 @@ export function LeadActions({ lead }: LeadActionProps) {
               <div>
                 <h3 className="font-semibold">Communication Plan:</h3>
                 <p className="text-muted-foreground whitespace-pre-wrap">{commPlanResult.communicationPlan}</p>
+
               </div>
             </div>
           )}
