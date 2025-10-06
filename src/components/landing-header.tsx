@@ -10,6 +10,9 @@ export function LandingHeader() {
           <Logo className="h-6 w-6 text-primary" />
           <span className="font-headline text-lg font-bold">
             Realtech
+            <sup className="text-xs font-light ml-1">
+              Powered by Howdy Analytics
+            </sup>
           </span>
         </Link>
         <nav className="flex items-center gap-4">

@@ -9,11 +9,14 @@ export function LandingFooter() {
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
             <Logo className="h-6 w-6 text-primary" />
             <span className="font-headline text-lg font-bold">
-              Howdy Analytics
+              Realtech
+               <sup className="text-xs font-light ml-1">
+                Powered by Howdy Analytics
+              </sup>
             </span>
           </Link>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Howdy Analytics. All rights reserved.
+            © {new Date().getFullYear()} Realtech. All rights reserved.
           </p>
           <nav className="flex gap-4">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground" prefetch={false}>
