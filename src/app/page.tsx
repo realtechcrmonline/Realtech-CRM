@@ -36,7 +36,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                   <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <Link href="/dashboard">
+                    <Link href="https://www.instagram.com/howdyanalytics/" target="_blank">
                       Start Smarter Selling
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
