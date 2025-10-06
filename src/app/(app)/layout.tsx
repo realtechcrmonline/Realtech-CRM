@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Users, Bot, Settings, Search, UploadCloud, BookUser, FileText, Mic, Calendar, Mail } from 'lucide-react';
+import { Home, Users, Bot, Settings, Search, UploadCloud, BookUser, FileText, Mic, Calendar, Mail, Briefcase, BarChart3 } from 'lucide-react';
 import {
   SidebarProvider,
   Sidebar,
@@ -33,10 +33,16 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { href: '/dashboard', label: 'Dashboard', icon: Home },
+    { href: '/get-started', label: 'Get Started', icon: UploadCloud },
+    { href: '/leads', label: 'Leads', icon: Users },
     { href: '/contacts', label: 'Contacts', icon: BookUser },
     { href: '/appointments', label: 'Appointments', icon: Calendar },
     { href: '/transcriptions', label: 'Call Scripts', icon: FileText },
+    { href: '/recordings', label: 'Recordings', icon: Mic },
     { href: '/templates', label: 'Email Templates', icon: Mail },
+    { href: '/crm', label: 'CRM', icon: Briefcase },
+    { href: '/tasks', label: 'Tasks', icon: Bot },
+    { href: '/settings', label: 'Settings', icon: Settings },
   ];
 
   return (

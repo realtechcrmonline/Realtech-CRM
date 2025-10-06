@@ -6,6 +6,7 @@ import { Badge, badgeVariants } from '@/components/ui/badge';
 import { mockLeads } from '@/data/mock-data';
 import { LeadActions } from '@/components/lead-actions';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export default function LeadsPage() {
   const getStatusBadgeVariant = (status: string) => {
@@ -33,9 +34,11 @@ export default function LeadsPage() {
           <p className="text-muted-foreground">View, manage, and nurture your leads.</p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline">
-            <FileUp className="mr-2 h-4 w-4" />
-            Upload Sheet
+          <Button variant="outline" asChild>
+            <Link href="/get-started">
+              <FileUp className="mr-2 h-4 w-4" />
+              Upload Sheet
+            </Link>
           </Button>
           <Button>
             <PlusCircle className="mr-2 h-4 w-4" />
