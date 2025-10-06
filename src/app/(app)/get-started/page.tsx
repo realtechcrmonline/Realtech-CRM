@@ -47,7 +47,7 @@ export default function GetStartedPage() {
           leadName: lead.name,
           leadInterest: lead.interest,
           initialMood: lead.mood,
-          productName: "Realtech AI",
+          productName: "Howdy Analytics AI",
           productFeatures: "Automated lead nurturing, sentiment analysis, and dynamic script generation."
         });
         console.log(`Generated script for ${lead.name}:`, scriptResult.script);
@@ -88,7 +88,7 @@ export default function GetStartedPage() {
   return (
     <>
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight font-headline">Get Started</h1>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">Import Contacts</h1>
         <p className="text-muted-foreground">Upload your lead sheet to begin the automated outreach process.</p>
       </div>
 
@@ -153,7 +153,7 @@ export default function GetStartedPage() {
                <div className="text-center text-green-600">
                 <CheckCircle className="mx-auto h-12 w-12" />
                 <p className="mt-4 font-semibold">Processing Complete!</p>
-                <p className="text-sm text-muted-foreground">Check the CRM, Transcriptions, and Recordings pages for updates.</p>
+                <p className="text-sm text-muted-foreground">Check the CRM and Call Scripts pages for updates.</p>
               </div>
             ) : (
               <div className="text-center text-muted-foreground">

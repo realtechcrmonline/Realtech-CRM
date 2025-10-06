@@ -27,12 +27,12 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 items-center pt-24 pb-12">
               <div className="space-y-6 text-center md:text-left">
                 <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-                  Real Estate Management,
+                  Contact Management,
                   <br />
                   <span className="text-primary">Effortlessly Automated.</span>
                 </h1>
                 <p className="max-w-xl mx-auto md:mx-0 text-lg text-muted-foreground">
-                  Welcome to Realtech by Howdy Analytics. Upload your lead sheet, set your preferences, and let our AI manage reminders, responses, and client nurturing.
+                  Welcome to Howdy Analytics. Upload your lead sheet, set your preferences, and let our AI manage reminders, responses, and client nurturing.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                   <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -96,7 +96,7 @@ export default function Home() {
               <div className="space-y-4">
                 <h3 className="font-headline text-2xl font-bold">Intelligent Automation at Your Fingertips</h3>
                 <p className="text-muted-foreground">
-                  From lead sheet to nurtured client, Realtech handles the repetitive tasks. Our AI-powered system sends timely reminders and personalized follow-ups, so you never miss an opportunity.
+                  From lead sheet to nurtured client, Howdy Analytics handles the repetitive tasks. Our AI-powered system sends timely reminders and personalized follow-ups, so you never miss an opportunity.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Automated lead communication management.</span></li>
@@ -110,7 +110,7 @@ export default function Home() {
               <div className="space-y-4 md:order-2">
                 <h3 className="font-headline text-2xl font-bold">Connect and Convert with Confidence</h3>
                 <p className="text-muted-foreground">
-                  Build stronger client relationships with intelligent insights. Realtech assesses engagement levels and suggests the next best actions, helping you connect with more clients, stress-free.
+                  Build stronger client relationships with intelligent insights. Howdy Analytics assesses engagement levels and suggests the next best actions, helping you connect with more clients, stress-free.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" /><span>Visualize productivity with our insightful dashboard.</span></li>
@@ -136,13 +136,13 @@ export default function Home() {
         <section className="py-12 md:py-24 bg-secondary">
           <div className="container mx-auto px-4 md:px-6">
             <div className="bg-gradient-to-r from-primary to-blue-500 text-primary-foreground rounded-lg p-8 md:p-12 text-center shadow-xl transform hover:scale-105 transition-transform duration-300">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold">Experience Effortless Real Estate Management</h2>
+              <h2 className="font-headline text-3xl md:text-4xl font-bold">Experience Effortless Contact Management</h2>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-                Join agents who are selling smarter, not harder. Take the next step toward a more productive and profitable future with Realtech.
+                Join agents who are selling smarter, not harder. Take the next step toward a more productive and profitable future with Howdy Analytics.
               </p>
               <Button size="lg" asChild className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
                 <Link href="/dashboard">
-                  Try Realtech Today
+                  Try Howdy Analytics Today
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

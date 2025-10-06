@@ -36,7 +36,7 @@ const prompt = ai.definePrompt({
   name: 'generateSalesScriptPrompt',
   input: {schema: GenerateSalesScriptInputSchema},
   output: {schema: GenerateSalesScriptOutputSchema},
-  prompt: `You are an AI sales assistant for a company called Realtech. Your task is to generate a conversational, natural-sounding sales script to call a lead named {{{leadName}}}.
+  prompt: `You are an AI sales assistant for a company called Howdy Analytics. Your task is to generate a conversational, natural-sounding sales script to call a lead named {{{leadName}}}.
 
 The script should be structured as follows:
 1.  **Opening:** Start with a friendly opening that acknowledges the lead's time.

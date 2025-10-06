@@ -3,8 +3,8 @@ import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Realtech AI Assistant',
-  description: 'Effortless real estate management with AI.',
+  title: 'Howdy Analytics AI Assistant',
+  description: 'Effortless contact management with AI.',
 };
 
 export default function RootLayout({

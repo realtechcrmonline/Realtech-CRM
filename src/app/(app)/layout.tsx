@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Users, Bot, Settings, Search, UploadCloud, BookUser, FileText, Mic } from 'lucide-react';
+import { Home, Users, Bot, Settings, Search, UploadCloud, BookUser, FileText, Mic, Calendar, Mail } from 'lucide-react';
 import {
   SidebarProvider,
   Sidebar,
@@ -33,13 +33,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { href: '/dashboard', label: 'Dashboard', icon: Home },
-    { href: '/get-started', label: 'Get Started', icon: UploadCloud },
-    { href: '/leads', label: 'Lead Management', icon: Users },
-    { href: '/crm', label: 'CRM', icon: BookUser },
-    { href: '/transcriptions', label: 'Transcriptions', icon: FileText },
-    { href: '/recordings', label: 'Recordings', icon: Mic },
-    { href: '/tasks', label: 'Task Automation', icon: Bot },
-    { href: '/settings', label: 'Settings', icon: Settings },
+    { href: '/contacts', label: 'Contacts', icon: BookUser },
+    { href: '/appointments', label: 'Appointments', icon: Calendar },
+    { href: '/transcriptions', label: 'Call Scripts', icon: FileText },
+    { href: '/templates', label: 'Email Templates', icon: Mail },
   ];
 
   return (
@@ -50,7 +47,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             <div className="flex items-center gap-2">
               <Logo className="h-7 w-7 text-primary" />
               <span className="font-headline text-lg font-semibold text-sidebar-foreground group-data-[collapsible=icon]:hidden">
-                Realtech
+                Howdy Analytics
               </span>
             </div>
           </SidebarHeader>

@@ -49,7 +49,7 @@ export default function TranscriptionsPage() {
   return (
     <>
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight font-headline">Transcriptions</h1>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">Call Scripts</h1>
         <p className="text-muted-foreground">Generate and review AI-powered sales scripts.</p>
       </div>
 
