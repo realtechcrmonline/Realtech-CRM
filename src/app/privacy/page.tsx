@@ -60,7 +60,7 @@ export default function PrivacyPage() {
 
             <h2>7. Contact Us</h2>
             <p>
-              If you have questions or comments about this Privacy Policy, please contact us at privacy@realtech.com.
+              If you have questions or comments about this Privacy Policy, please contact us at gethelp@howdyanalytics.com.
             </p>
           </div>
         </div>
