@@ -141,7 +141,7 @@ export default function Home() {
                 Join agents who are selling smarter, not harder. Take the next step toward a more productive and profitable future with Howdy Analytics.
               </p>
               <Button size="lg" asChild className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/dashboard">
+                <Link href="https://www.linkedin.com/company/howdyanalytics" target="_blank">
                   Try Howdy Analytics Today
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
