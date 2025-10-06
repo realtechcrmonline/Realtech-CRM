@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Users, Bot, Settings, Search, UploadCloud, BookUser, FileText, Mic, Calendar, Mail, Briefcase, BarChart3 } from 'lucide-react';
+import { Home, Users, Bot, Settings, Search, UploadCloud, BookUser, FileText, Mic, Calendar, Mail, Briefcase, BarChart3, ArrowLeft } from 'lucide-react';
 import {
   SidebarProvider,
   Sidebar,
@@ -43,6 +43,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     { href: '/crm', label: 'CRM', icon: Briefcase },
     { href: '/tasks', label: 'Tasks', icon: Bot },
     { href: '/settings', label: 'Settings', icon: Settings },
+    { href: '/', label: 'Back', icon: ArrowLeft },
   ];
 
   return (
@@ -63,7 +64,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 <SidebarMenuItem key={item.label}>
                   <Link href={item.href}>
                     <SidebarMenuButton
-                      isActive={pathname.startsWith(item.href)}
+                      isActive={pathname.startsWith(item.href) && item.href !== '/'}
                       tooltip={{ children: item.label }}
                     >
                       <item.icon />
