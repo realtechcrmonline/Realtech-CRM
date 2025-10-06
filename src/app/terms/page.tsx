@@ -58,7 +58,7 @@ export default function TermsPage() {
 
             <h2>10. Contact Us</h2>
             <p>
-              If you have any questions about these Terms, please contact us at contact@realtech.com.
+              If you have any questions about these Terms, please contact us at gethelp@howdyanalytics.com.
             </p>
           </div>
         </div>
