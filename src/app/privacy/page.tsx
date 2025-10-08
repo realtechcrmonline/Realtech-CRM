@@ -1,7 +1,16 @@
+'use client';
+
 import { LandingHeader } from "@/components/landing-header";
 import { LandingFooter } from "@/components/landing-footer";
+import { useState, useEffect } from 'react';
 
 export default function PrivacyPage() {
+  const [lastUpdated, setLastUpdated] = useState('');
+
+  useEffect(() => {
+    setLastUpdated(new Date().toLocaleDateString());
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <LandingHeader />
@@ -9,7 +18,7 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="prose prose-stone mx-auto max-w-4xl dark:prose-invert">
             <h1>Privacy Policy</h1>
-            <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
+            <p className="text-muted-foreground">Last updated: {lastUpdated}</p>
             
             <h2>1. Introduction</h2>
             <p>
