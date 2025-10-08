@@ -5,6 +5,9 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Howdy Analytics AI Assistant',
   description: 'Effortless contact management with AI.',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
