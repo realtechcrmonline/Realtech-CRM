@@ -1,6 +1,6 @@
 import type {NextConfig} from 'next';
 
-const isProjectPage = true; // set to false for user/org pages
+const isProjectPage = false; // set to false for user/org pages
 
 const nextConfig: NextConfig = {
   /* config options here */
