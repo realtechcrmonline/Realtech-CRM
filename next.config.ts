@@ -1,6 +1,6 @@
 import type {NextConfig} from 'next';
 
-const isProjectPage = false; // set to false for user/org pages
+const isProjectPage = true; // set to false for user/org pages
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -33,11 +33,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  distDir: 'build',
   output: 'export',
   trailingSlash: true,
-  basePath: isProjectPage ? '/realtech-crm' : undefined,
-  assetPrefix: isProjectPage ? '/realtech-crm/' : undefined,
+  basePath: isProjectPage ? '/Realtech-CRM' : undefined,
+  assetPrefix: isProjectPage ? '/Realtech-CRM/' : undefined,
 };
 
 export default nextConfig;
