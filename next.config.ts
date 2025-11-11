@@ -1,5 +1,7 @@
 import type {NextConfig} from 'next';
 
+const isProjectPage = true; // set to false for user/org pages
+
 const nextConfig: NextConfig = {
   /* config options here */
   typescript: {
@@ -9,6 +11,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -30,6 +33,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  distDir: 'build',
+  output: 'export',
+  trailingSlash: true,
+  basePath: isProjectPage ? '/realtech-crm' : undefined,
+  assetPrefix: isProjectPage ? '/realtech-crm/' : undefined,
 };
 
 export default nextConfig;

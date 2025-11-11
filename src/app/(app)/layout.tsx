@@ -82,7 +82,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                   <AvatarFallback>DS</AvatarFallback>
                 </Avatar>
                 <div className="overflow-hidden group-data-[collapsible=icon]:hidden">
-                  <p className="text-sm font-medium text-sidebar-foreground truncate">Deepak Sethi</p>
+                  <p className="text-sm font-medium text-sidebar-foreground truncate">John Doe</p>
                 </div>
               </div>
           </SidebarFooter>
