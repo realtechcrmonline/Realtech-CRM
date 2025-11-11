@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { automateRepetitiveTasks, AutomateRepetitiveTasksOutput } from "@/ai/flows/automate-repetitive-tasks";
 import { useToast } from "@/hooks/use-toast";
 
 const taskSchema = z.object({
@@ -27,7 +26,7 @@ type TaskFormValues = z.infer<typeof taskSchema>;
 
 export default function TasksPage() {
   const { toast } = useToast();
-  const [result, setResult] = useState<AutomateRepetitiveTasksOutput | null>(null);
+  const [result, setResult] = useState<{ suggestedActions: string; estimatedTimeSavings: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<TaskFormValues>({
@@ -41,12 +40,13 @@ export default function TasksPage() {
     setIsLoading(true);
     setResult(null);
     try {
-      const aiResult = await automateRepetitiveTasks({
-        taskDescription: data.taskDescription,
-        userDetails: "Real Estate Agent Deepak Sethi",
-        leadDetails: "General tasks, not specific to one lead.",
+      // Static build: simulate a placeholder response
+      await new Promise(r => setTimeout(r, 600));
+      setResult({
+        suggestedActions:
+          "1) Create an email template.\n2) Use calendar links for scheduling.\n3) Save a CRM snippet for quick entry.",
+        estimatedTimeSavings: "Approx. 2–3 hours/week once automated.",
       });
-      setResult(aiResult);
     } catch (error) {
       console.error("AI task automation failed:", error);
       toast({

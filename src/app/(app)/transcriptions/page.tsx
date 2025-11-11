@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { generateSalesScript } from '@/ai/flows/generate-sales-script';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 
@@ -26,14 +25,13 @@ export default function TranscriptionsPage() {
     setIsLoading(true);
     setScript('');
     try {
-      const result = await generateSalesScript({
-        leadName: selectedLead.name,
-        leadInterest: selectedLead.interest,
-        initialMood: selectedLead.mood,
-        productName: "Realtech AI",
-        productFeatures: "Automated lead nurturing, sentiment analysis, and dynamic script generation.",
-      });
-      setScript(result.script);
+      // Static build: provide a local placeholder script
+      await new Promise(r => setTimeout(r, 600));
+      setScript(
+        `Hello ${selectedLead.name}, thanks for your time today.\n\n` +
+        `Based on your ${selectedLead.interest} interest, I’d love to share options tailored to you.\n` +
+        `If now isn’t ideal, we can schedule a quick follow-up. How does Thursday afternoon look?`
+      );
     } catch (error) {
       console.error('Failed to generate script:', error);
       toast({

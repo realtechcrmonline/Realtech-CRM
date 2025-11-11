@@ -19,12 +19,21 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { type Lead } from '@/data/mock-data';
-import { suggestClientNurturingActions, SuggestClientNurturingActionsOutput } from '@/ai/flows/suggest-client-nurturing-actions';
-import { automateLeadCommunication, AutomateLeadCommunicationOutput } from '@/ai/flows/automate-lead-communication';
 import { useToast } from '@/hooks/use-toast';
 
 type LeadActionProps = {
   lead: Lead;
+};
+
+// Local result types (avoid importing server-only modules in client bundle)
+type SuggestClientNurturingActionsOutput = {
+  engagementLevel: string;
+  suggestedAction: string;
+  personalizedCommunication: string;
+};
+
+type AutomateLeadCommunicationOutput = {
+  communicationPlan: string;
 };
 
 export function LeadActions({ lead }: LeadActionProps) {
@@ -50,12 +59,8 @@ export function LeadActions({ lead }: LeadActionProps) {
 
     setIsLoading(true);
     try {
-      const result = await suggestClientNurturingActions({
-        leadDetails: `Name: ${lead.name}, Email: ${lead.email}, Status: ${lead.status}, Engagement: ${lead.engagement}, Last Contact: ${lead.lastContact}`,
-        marketConditions: "The market is currently competitive with low inventory.",
-        agentPreferences: "Prefers a friendly tone, with 2-3 communications per week via email.",
-      });
-      setNurtureResult(result);
+      // Static export-safe fallback (no server actions/API on GitHub Pages)
+      throw new Error('AI features are disabled in static build.');
     } catch (e) {
       handleError(e, 'Nurturing Suggestions');
       setNurtureDialogOpen(false);
@@ -70,12 +75,8 @@ export function LeadActions({ lead }: LeadActionProps) {
 
     setIsLoading(true);
     try {
-      const result = await automateLeadCommunication({
-        leadDetails: `Name: ${lead.name}, Email: ${lead.email}, Status: ${lead.status}, Engagement: ${lead.engagement}, Last Contact: ${lead.lastContact}`,
-        communicationPreferences: "Friendly tone, 2-3 times per week, via email. Focus on new listings in their preferred area.",
-        realEstateAgentName: "Deepak Sethi",
-      });
-      setCommPlanResult(result);
+      // Static export-safe fallback (no server actions/API on GitHub Pages)
+      throw new Error('AI features are disabled in static build.');
     } catch (e) {
       handleError(e, 'Communication Plan');
       setCommPlanDialogOpen(false);

@@ -7,8 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-import { generateSalesScript } from '@/ai/flows/generate-sales-script';
-import { suggestClientNurturingActions } from '@/ai/flows/suggest-client-nurturing-actions';
 
 interface IFormInput {
   file: FileList;
@@ -42,24 +40,12 @@ export default function GetStartedPage() {
       for (const lead of parsedLeadsFromFile) {
         console.log(`Processing lead: ${lead.name}`);
         
-        // The AI generates a dynamic sales script for the call.
-        const scriptResult = await generateSalesScript({
-          leadName: lead.name,
-          leadInterest: lead.interest,
-          initialMood: lead.mood,
-          productName: "Howdy Analytics AI",
-          productFeatures: "Automated lead nurturing, sentiment analysis, and dynamic script generation."
-        });
-        console.log(`Generated script for ${lead.name}:`, scriptResult.script);
+        // Static build: skip AI generation (no server/API on GitHub Pages)
+        console.log(`AI script generation skipped for ${lead.name} (static build).`);
 
 
-        // The AI suggests a nurturing action after the call.
-        const nurturingAction = await suggestClientNurturingActions({
-          leadDetails: `Name: ${lead.name}, Interest: ${lead.interest}, Email: ${lead.email}, Profession: ${lead.profession}`,
-          marketConditions: "Competitive market with rising interest rates.",
-          agentPreferences: "Friendly and professional tone, follow-up twice a week."
-        });
-        console.log(`Nurturing suggestion for ${lead.name}:`, nurturingAction);
+        // Static build: skip AI nurturing suggestion
+        console.log(`AI nurturing suggestion skipped for ${lead.name} (static build).`);
         
         // Here you would add logic to save the script, recording, and CRM entry.
       }
